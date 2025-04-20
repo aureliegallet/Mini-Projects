@@ -1,0 +1,25 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+    <title>Home</title>
+</head>
+<body>
+    <div class="container">
+        <div class="quote-container">
+            <h2 id="quote"></h2>
+            <h3 id="author"></h3>
+        </div>
+        
+        <h1>Games</h1>
+        <ul>
+            <li><a href="{{ url_for('mastermind') }}">Mastermind</a></li>
+        </ul>        
+    </div>
+    <script src="{{ url_for('static', filename='index.js') }}"></script>
+
+</body>
+</html>
