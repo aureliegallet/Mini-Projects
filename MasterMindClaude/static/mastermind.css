@@ -1,0 +1,226 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+/* Instructions styling */
+.instructions {
+    background-color: #e0f0ff;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.instructions h2 {
+    margin-top: 0;
+    color: #0c5a8e;
+    font-size: 1.2rem;
+}
+
+.instructions ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.instructions li {
+    margin-bottom: 5px;
+}
+
+.instruction-pin {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 1px solid #333;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+.instruction-pin.green {
+    background-color: green;
+}
+
+.instruction-pin.orange {
+    background-color: orange;
+}
+
+.instruction-pin.black {
+    background-color: black;
+}
+
+/* Game board styling */
+.game-board {
+    background-color: #1e70a8;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+}
+
+.code-maker {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #0c5a8e;
+    border-radius: 5px;
+}
+
+.secret-code {
+    display: flex;
+    gap: 10px;
+}
+
+.attempts {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.attempt-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    background-color: #0c5a8e;
+    border-radius: 5px;
+}
+
+.code-slots {
+    display: flex;
+    gap: 10px;
+}
+
+.feedback {
+    display: flex;
+    gap: 10px;
+    margin-left: 20px;
+}
+
+.code-peg, .code-slot, .feedback-peg {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px solid #333;
+}
+
+.code-peg.hidden {
+    background-color: #333;
+}
+
+.code-slot {
+    background-color: #ddd;
+    cursor: pointer;
+    transition: transform 0.1s;
+}
+
+.code-slot:not(.code-slot:only-child) {
+    transform: scale(1);
+}
+
+.code-slot:hover:not(.code-slot:only-child) {
+    transform: scale(1.1);
+}
+
+.feedback-peg {
+    width: 15px;
+    height: 15px;
+    background-color: #ddd;
+}
+
+/* Updated feedback peg colors */
+.feedback-peg.correct-position {
+    background-color: green;
+}
+
+.feedback-peg.correct-color {
+    background-color: orange;
+}
+
+.feedback-peg.wrong {
+    background-color: black;
+}
+
+.color-selection {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.color-peg {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid #333;
+    cursor: pointer;
+    transition: transform 0.1s;
+}
+
+.color-peg:hover {
+    transform: scale(1.1);
+}
+
+.color-peg.red { background-color: red; }
+.color-peg.green { background-color: green; }
+.color-peg.blue { background-color: blue; }
+.color-peg.yellow { background-color: yellow; }
+.color-peg.purple { background-color: purple; }
+.color-peg.orange { background-color: orange; }
+
+.code-slot.red { background-color: red; }
+.code-slot.green { background-color: green; }
+.code-slot.blue { background-color: blue; }
+.code-slot.yellow { background-color: yellow; }
+.code-slot.purple { background-color: purple; }
+.code-slot.orange { background-color: orange; }
+
+.code-peg.red { background-color: red; }
+.code-peg.green { background-color: green; }
+.code-peg.blue { background-color: blue; }
+.code-peg.yellow { background-color: yellow; }
+.code-peg.purple { background-color: purple; }
+.code-peg.orange { background-color: orange; }
+
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #0c5a8e;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.2s;
+}
+
+button:hover {
+    background-color: #1e70a8;
+}
+
+#message {
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    height: 24px;
+}

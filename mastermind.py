@@ -1,6 +1,6 @@
 import random
 
-colors = ["Red", "Green", "Blue", "Yellow", "Orange", "Purple"]  # Red, Green, Blue, Yellow, Orange, Purple
+colors = ["RED", "GREEN", "BLUE", "YELLOW", "ORANGE", "PURPLE"]  # Red, Green, Blue, Yellow, Orange, Purple
 code_length = 4
 max_attempts = 10
 attempts = 0
@@ -13,7 +13,8 @@ print(f"Code length: {code_length}, Max attempts: {max_attempts}")
 
 while attempts < max_attempts:
     guess = input(f"Attempt {attempts + 1}: Enter your guess (ex: Red Green Blue Yellow): ").strip().split()
-    
+    guess = [color.upper() for color in guess]  # Convert to all caps to match the colors list
+        
     if len(guess) != code_length or not all(color in colors for color in guess):
         print(f"Invalid input. Please enter exactly {code_length} colors. Available colors: {', '.join(colors)}")
         continue

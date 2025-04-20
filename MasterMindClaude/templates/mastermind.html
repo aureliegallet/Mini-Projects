@@ -1,0 +1,70 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mastermind Game</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='mastermind.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Mastermind</h1>
+        
+        <div class="instructions">
+            <h2>How to Play:</h2>
+            <ul>
+                <li>Guess the hidden 4-color code. You have 10 attempts.</li>
+                <li>You can interact with pins in 3 ways:
+                    <ul>
+                        <li>Drag colored pins from the bottom palette to any slot</li>
+                        <li>Click on a color to automatically place it in the next empty slot</li>
+                        <li>Click on a placed pin to remove it</li>
+                    </ul>
+                </li>
+                <li>Click "Check" to submit your guess</li>
+                <li>For each pin you place, you'll receive feedback:</li>
+                <ul>
+                    <li><span class="instruction-pin green"></span> Green: This pin has the correct color in the correct position</li>
+                    <li><span class="instruction-pin orange"></span> Orange: This pin has a color that exists in the secret code but in a different position</li>
+                    <li><span class="instruction-pin black"></span> Black: This pin has a color that does not exist in the secret code</li>
+                </ul>
+            </ul>
+        </div>
+
+        <div id="message"></div>
+        
+        <div class="game-board">
+            <div class="code-maker">
+                <div class="secret-code">
+                    <div class="code-peg hidden"></div>
+                    <div class="code-peg hidden"></div>
+                    <div class="code-peg hidden"></div>
+                    <div class="code-peg hidden"></div>
+                </div>
+            </div>
+            
+            <div class="attempts" id="attempts">
+                <!-- Rows will be created dynamically -->
+            </div>
+        </div>
+        
+        <div class="color-selection">
+            <div class="color-peg red" draggable="true"></div>
+            <div class="color-peg green" draggable="true"></div>
+            <div class="color-peg blue" draggable="true"></div>
+            <div class="color-peg yellow" draggable="true"></div>
+            <div class="color-peg purple" draggable="true"></div>
+            <div class="color-peg orange" draggable="true"></div>
+        </div>
+        
+        <div class="controls">
+            <button id="check-button">Check</button>
+            <button id="new-game-button">New Game</button>
+        </div>
+        
+    </div>
+    
+    <script src="{{ url_for('static', filename='mastermind.js') }}"></script>
+</body>
+</html>
